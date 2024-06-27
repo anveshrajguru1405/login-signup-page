@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-store, no-cache, must-revalidate, private"
+    />
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="../logindata.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to your Hall profile</h1>
+      <h3>Name: <%= data.name %></h3>
+      <h3>Roll No: <%= data.roll_no.toUpperCase()%></h3>
+      <h3>Room No: <%= data.room_no.toUpperCase()%></h3>
+      <h3>Email: <%= data.email%></h3>
+      <h3>Token: <%= data.token%></h3>
+      <h3>Hall: <%= data.hall_name.toUpperCase()%></h3>
+      <% if(data.bio){ %>
+      <h3>Bio: <%= data.bio %></h3>
+      <% } %>
+      <form action="/edit" method="get">
+        <input type="hidden" name="userid" value="<%= data.token %>" />
+        <button type="submit">
+          <!-- Change the anchor tag to a button type="submit" -->
+          <span class="bn39span">Edit</span>
+        </button>
+      </form>
+
+      <!-- Button to add new information -->
+      <% if(!data.bio){ %>
+      <form action="/newinfo" method="get">
+        <input type="hidden" name="userid" value="<%= data.token %>" />
+        <button type="submit">
+          <!-- Change the anchor tag to a button type="submit" -->
+          <span class="bn39span">Add information</span>
+        </button>
+      </form>
+      <% } %>
+      <form action="/logout" method="get">
+        <button type="submit">
+          <!-- Change the anchor tag to a button type="submit" -->
+          <span class="bn39span">Logout</span>
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
