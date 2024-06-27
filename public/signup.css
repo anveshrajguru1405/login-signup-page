@@ -1,0 +1,139 @@
+/* Styles for the submit button */
+button {
+    width: 240px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 20px;
+    height: 55px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    transition: all 0.4s ease-in-out;
+}
+
+button:hover {
+    background-position: 100% 0;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Additional styles for this specific button */
+button.registration-btn {
+    background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a, #fbb03b);
+    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+}
+
+/* Styles for the registration form */
+#registration-form {
+    --s: 10px;
+    width: 400px;
+    height: 600px;
+    border: 2px solid green;
+    position: relative;
+    transform: translate(0);
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.166);
+}
+
+#registration-form:before {
+    content: "";
+    position: absolute;
+    inset: calc(-1 * var(--s));
+    clip-path: polygon(-100vmax -100vmax, 100vmax -100vmax, 100vmax 100vmax, -100vmax 100vmax, -100vmax -100vmax, calc(0px + var(--s)) calc(0px + var(--s)), calc(0px + var(--s)) calc(100% - var(--s)), calc(100% - var(--s)) calc(100% - var(--s)), calc(100% - var(--s)) calc(0px + var(--s)), calc(0px + var(--s)) calc(0px + var(--s)));
+    transform: translate3d(0, 0, -1px);
+    background: conic-gradient(from 90deg at 40% -25%, #ffd700, #f79d03, #ee6907, #e6390a, #de0d0d, #d61039, #cf1261, #c71585, #cf1261, #d61039, #de0d0d, #ee6907, #f79d03, #ffd700, #ffd700, #ffd700);
+    filter: blur(10px);
+}
+
+#registration-form h2,
+#registration-form label,
+#registration-form button {
+    color: #fff;
+}
+
+#registration-form h2 {
+    margin-bottom: 20px;
+}
+
+#registration-form label {
+    margin-top: 5px;
+}
+
+#registration-form input {
+    margin-top: 5px;
+    /* padding: 10px; */
+    font-size: 16px;
+    color: #113a62;
+}
+
+#registration-form button {
+    width: 180px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0px;
+    height: 45px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    transition: all 0.4s ease-in-out;
+    background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a, #fbb03b);
+    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+}
+
+#registration-form button:hover {
+    background-position: 100% 0;
+    transition: all 0.4s ease-in-out;
+}
+
+#registration-form button:focus {
+    outline: none;
+}
+
+#registration-form input {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #113a62;
+    border: none;
+    /* padding: 10px; */
+    margin-bottom: 15px;
+    border-radius: 2px;
+    width: 75%;
+    height: 23px;
+    /* box-sizing: border-box; */
+    outline: none;
+    background: linear-gradient(to right, rgba(255, 153, 102, 0.8), rgba(255, 94, 98, 0.8));
+}
+
+#registration-form input::placeholder {
+    color: #113a62;
+}
+
+label {
+    font-family: 'Georgia', serif;
+    color: transparent;
+    letter-spacing: 1px;
+}
+
+input:required::placeholder-shown+span {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Optional: Style the input border for visual feedback */
+input:required:valid {
+    border: 2px solid green;
+}
+
+input:required:invalid {
+    border: 2px solid red;
+}
